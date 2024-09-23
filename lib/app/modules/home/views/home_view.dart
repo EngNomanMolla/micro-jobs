@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
+import 'package:multi_services/app/routes/app_pages.dart';
 import 'package:multi_services/app/theme/all_colors.dart';
 import 'package:multi_services/app/theme/all_styles.dart';
 
@@ -29,7 +32,8 @@ class HomeView extends GetView<HomeController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Expanded(
                                 flex:3,
@@ -39,7 +43,7 @@ class HomeView extends GetView<HomeController> {
                                     children: [
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(100),
-                                       child: Image.asset('assets/images/png/home/profile.png',height: 60,width: 60,fit: BoxFit.cover),
+                                       child: Image.asset('assets/images/png/home/profile.png',height: 45,width: 45,fit: BoxFit.cover),
                                        // child: SvgPicture.asset('assets/images/svg/home/profile.svg'),
                                       ),
                                       SizedBox(height: 4.0),
@@ -48,12 +52,12 @@ class HomeView extends GetView<HomeController> {
                                         children: [
                                         Text('Status',style: TextStyle(
                                             color:  Color(0xff00631E),
-                                          fontSize: 16.0,
+                                          fontSize: 12.0,
                                           fontWeight: FontWeight.bold,
                                         )),
                                         SizedBox(width: 5.0),
                                         //Image.asset('assets/images/png/home/check_circle.png',height: 50.0,width: 50.0)
-                                          Icon(Icons.circle_rounded,color:Color(0xff00631E),size: 15.0)
+                                          Icon(Icons.circle_rounded,color:Color(0xff00631E),size: 10.0)
                                       ]),
 
                                       Row(
@@ -61,14 +65,14 @@ class HomeView extends GetView<HomeController> {
                                         children: [
                                           Text('LVL.',style: TextStyle(
                                             color:  AllColors.blackColor,
-                                            fontSize: 16.0,
+                                            fontSize: 12.0,
                                             fontWeight: FontWeight.bold,
                                           )),
                                           SizedBox(width: 5.0),
 
                                           Text('10',style: TextStyle(
                                             color: AllColors.blackColor,
-                                            fontSize: 16.0,
+                                            fontSize: 12.0,
                                             fontWeight: FontWeight.bold,
                                           )),
 
@@ -87,7 +91,7 @@ class HomeView extends GetView<HomeController> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Container(height: 10.0),
+
                                       Row(children: [
                                        Text('Farabi Hasan',style: AllStyles.headingBoldBlackTextStyles),
                                        // SvgPicture.asset('assets/images/svg/home/verify.svg',height: 50.0,width: 50.0)
@@ -155,7 +159,7 @@ class HomeView extends GetView<HomeController> {
                             Column(
                               children: [
                                 Image.asset('assets/images/png/home/add.png'),
-                                Text('Add Money'),
+                                Text('Add'),
                               ],
                             ),
 
@@ -236,14 +240,18 @@ class HomeView extends GetView<HomeController> {
                   
                   Column(children: [
                     
-                    Image.asset('assets/images/png/home/work.png',height: 50.0,width: 50.0),
+                    GestureDetector(
+                        onTap: ()=>Get.toNamed(Routes.WORK),
+                        child: Image.asset('assets/images/png/home/work.png',height: 50.0,width: 50.0)),
                     Text('Work Job')
                     
                   ]),
 
                   Column(children: [
 
-                    Image.asset('assets/images/png/home/link_post.png',height: 50.0,width: 50.0),
+                    GestureDetector(
+                        onTap: ()=>Get.toNamed(Routes.LINK_POST),
+                        child: Image.asset('assets/images/png/home/link_post.png',height: 50.0,width: 50.0)),
                     Text('Link Post')
 
                   ]),
@@ -257,7 +265,9 @@ class HomeView extends GetView<HomeController> {
 
                   Column(children: [
 
-                    Image.asset('assets/images/png/home/work.png',height: 50.0,width: 50.0),
+                    InkWell(
+                        onTap: ()=>Get.toNamed(Routes.POST_LIVE),
+                        child: Image.asset('assets/images/png/home/work.png',height: 50.0,width: 50.0)),
                     Text('Post Live')
 
                   ]),

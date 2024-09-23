@@ -23,7 +23,7 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
     const ReferralView(),
     const HomeView(),
   ];
-  int selectedPage = 0;
+  int selectedPage = 4;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,8 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
       floatingActionButton: FloatingActionButton(
         shape: const CircleBorder(),
         backgroundColor: AllColors.blackColor,
-        child: Icon(Icons.home, color:  selectedPage == 4 ? Colors.yellow : Colors.white),
+       child: Image.asset('assets/images/png/bottom_nav_bar/home.png'),
+       // child: Icon(Icons.home, color:  selectedPage == 4 ? Colors.yellow : Colors.white),
         onPressed: () {
           setState(() {
             selectedPage = 4; // Navigate to the Home page
@@ -56,7 +57,8 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.settings, color: selectedPage == 0 ? Colors.yellow : Colors.white),
+                  //Icon(Icons.settings, color: selectedPage == 0 ? Colors.yellow : Colors.white),
+                  Image.asset('assets/images/png/bottom_nav_bar/settings.png'),
                   Text('Settings',style: TextStyle(color: AllColors.whiteColor))
                 ],
               ),
@@ -70,7 +72,8 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.leaderboard_rounded, color: selectedPage == 1 ? Colors.yellow : Colors.white),
+                  Image.asset('assets/images/png/bottom_nav_bar/level-up.png'),
+                  //Icon(Icons.leaderboard_rounded, color: selectedPage == 1 ? Colors.yellow : Colors.white),
                   Text('Level',style: TextStyle(color: AllColors.whiteColor))
                 ],
               ),
@@ -85,7 +88,8 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.announcement, color: selectedPage == 2 ? Colors.yellow : Colors.white),
+                  Image.asset('assets/images/png/bottom_nav_bar/speaker.png'),
+                  //Icon(Icons.announcement, color: selectedPage == 2 ? Colors.yellow : Colors.white),
                   Text('Notice',style: TextStyle(color: AllColors.whiteColor))
                 ],
               ),
@@ -99,7 +103,8 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.person_pin_sharp, color: selectedPage == 3 ? Colors.yellow : Colors.white),
+                  Image.asset('assets/images/png/bottom_nav_bar/connection.png'),
+                  //Icon(Icons.person_pin_sharp, color: selectedPage == 3 ? Colors.yellow : Colors.white),
                   Text('Referral',style: TextStyle(color: AllColors.whiteColor))
                 ],
               ),

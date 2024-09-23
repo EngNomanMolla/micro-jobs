@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:multi_services/app/routes/app_pages.dart';
 import 'package:multi_services/app/theme/all_colors.dart';
 import 'package:multi_services/app/theme/all_styles.dart';
 
@@ -195,20 +197,23 @@ class _RegisterViewState extends State<RegisterView> {
               ),
 
               SizedBox(height: 30.0),
-              Container(
-                  width: Get.width,
-                  height: 37.0,
-                  decoration: BoxDecoration(
-                    color: AllColors.secondaryColor,
-                    borderRadius: BorderRadius.circular(3.0),
-                  ),
-                  child:Center(
-                    child: Text('Sign Up',style: TextStyle(
-                      color: AllColors.whiteColor,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                    )),
-                  )
+              InkWell(
+                onTap: ()=>Get.toNamed(Routes.BOTTOM_NAV_BAR),
+                child: Container(
+                    width: Get.width,
+                    height: 37.0,
+                    decoration: BoxDecoration(
+                      color: AllColors.secondaryColor,
+                      borderRadius: BorderRadius.circular(3.0),
+                    ),
+                    child:Center(
+                      child: Text('Sign Up',style: TextStyle(
+                        color: AllColors.whiteColor,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      )),
+                    )
+                ),
               ),
 
               SizedBox(height: 30.0),
@@ -219,10 +224,13 @@ class _RegisterViewState extends State<RegisterView> {
                   color: AllColors.blackColor.withOpacity(0.7),
                 )),
                 SizedBox(width: 5.0),
-                Text('Login',style: TextStyle(
-                  color: AllColors.primaryColor,
-                  fontSize: 16.0,
-                ),)
+                GestureDetector(
+                  onTap: ()=>Get.offAndToNamed(Routes.LOGIN),
+                  child: Text('Login',style: TextStyle(
+                    color: AllColors.primaryColor,
+                    fontSize: 16.0,
+                  ),),
+                )
 
               ])
 
